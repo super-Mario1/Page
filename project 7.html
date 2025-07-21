@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Data</title>
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!--  -->
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src="data.json"></script>
+</head>
+<body>
+    
+<style>
+    body {
+background-color: hsl(221, 100%, 96%);
+}
+.container {
+    width: 90%;
+    margin: auto;
+    display: flex;
+}
+main{
+background: linear-gradient(to bottom, #7857ff, #2e2be9);
+    padding: auto;
+    margin: flex;
+    float: left;
+    border-radius: 10px;
+    width: 50%;
+}
+.res{
+    background: linear-gradient(to top, #7857ff, #2e2be9);
+    color:  hsl(221, 100%, 96%);
+    padding: auto;
+    margin: 0 flex;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    align-items: center;
+    text-align:center ;
+    border-radius:80%;
+    width: 56%;
+}
+.left{
+    text-align: center;
+}
+aside{
+    background-color: hsl(0, 0%, 100%);
+    padding: auto;
+    margin: flex;
+    width: 40%;
+    float: right;
+    border-radius: 10px;
+}
+img{
+    margin-right: 10px;
+    border-left:  10px ;
+    border-radius: 10px;
+}
+label{
+    margin-bottom: 10px;
+    background-color: lightgray;
+    padding: 5px;
+    border-right: 20px;
+    border-radius: 20px;
+    display: inline-block;
+    width: 175px;
+    justify-content:space-between; 
+}
+button{
+    margin-left: 5px;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 95%;
+    height: 30px;
+    background-color:hsl(224, 30%, 27%);
+    color: hsl(221, 100%, 96%);
+    cursor: pointer;
+}
+.wq{
+    margin-left: 35px;
+    padding: 0;
+    font-size: 1.2em;
+    color: black;
+}
+.rea{
+    color:  hsl(0, 100%, 67%);
+}
+.ver{
+    color: hsl(166, 100%, 37%);
+}
+.vis{
+    color: hsl(234, 85%, 45%);
+}
+.mem{
+    color: hsl(39, 100%, 56%);
+}
+label,button,h2,p,h1 {
+  font-family: "Hanken Grotesk", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: bolder;
+  font-style: normal;
+}
+label{
+  font-size: 12px;
+}
+p{
+ color:  hsl(241, 100%, 89%);
+}
+h1{
+  font-size: 2.5em;
+  color: hsl(221, 100%, 96%);
+}
+button:hover{
+    background-color: hsl(241, 72%, 46%);
+    color: hsl(221, 100%, 96%);
+    cursor: pointer;
+}
+</style>
+
+    <div class="container">
+        <main>
+            <h2 class="left">Your Result</h2>
+            <center>
+            <div class="res">
+                <h1><b>76</b></h1>
+                <p><b>OF 100</b></p>       
+            </div>
+            </center>            
+            <h2 class="left">Great</h2>
+            <p class="left">You scored higher than 65% of <br> the people who have taken <br> these tests</p>
+        </main>
+        <aside>
+            <p class="wq">Summary</p><br>
+            <div>
+                
+                <label onclick=""class="rea"><img src="icon-reaction.svg" alt=""  >Reaction</label>
+                <br>
+                <label onclick="" class="ver"><img src="icon-verbal.svg" alt="">Verbal</label>
+                <br>
+                <label onclick=""class="vis"><img src="icon-visual.svg" alt="" >Visual</label>
+                <br>
+                <label onclick=""class="mem"><img src="icon-memory.svg" alt="" >Memory</label>
+                
+            </div>
+            <br><br>
+            <button >Continue</button>
+        </aside>
+
+    </div>
+
+<script>
+
+    const summaryData = [
+        { category: "Reaction", score: 80, icon: "icon-reaction.svg", class: "rea" },
+        { category: "Memory", score: 92, icon: "icon-memory.svg", class: "mem" },
+        { category: "Verbal", score: 61, icon: "icon-verbal.svg", class: "ver" },
+        { category: "Visual", score: 73, icon: "icon-visual.svg", class: "vis" }
+    ];
+
+    const container = document.querySelector("aside div");
+
+    summaryData.forEach(item => {
+        const label = document.createElement("label");
+        label.className = item.class;
+        label.innerHTML = `<img src="${item.icon}" alt="">${item.category} <span>${item.score}</span>`;
+        container.appendChild(label);
+
+    });
+</script>
+
+
+    <center>
+ <footer>
+Challenge by Frontend Mentor. Coded by Mario .
+ </footer>
+ </center>
+</body>
+</html>
